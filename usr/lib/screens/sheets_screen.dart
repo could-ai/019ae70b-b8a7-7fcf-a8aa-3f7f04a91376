@@ -10,6 +10,17 @@ class SheetsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Mes Fiches de Révision'),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Création de fiche bientôt disponible !')),
+          );
+        },
+        label: const Text('Créer'),
+        icon: const Icon(Icons.add),
+        backgroundColor: Colors.deepPurple,
+        foregroundColor: Colors.white,
+      ),
       body: ListView.builder(
         padding: const EdgeInsets.all(16),
         itemCount: mockSheets.length,
@@ -52,6 +63,16 @@ class SheetDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(sheet.subject),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.edit),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: const Icon(Icons.share),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24),

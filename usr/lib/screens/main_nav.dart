@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'sheets_screen.dart';
 import 'flashcards_screen.dart';
 import 'quiz_screen.dart';
+import 'stats_screen.dart';
 
 class MainNavigation extends StatefulWidget {
   const MainNavigation({super.key});
@@ -151,7 +152,12 @@ class HomeScreen extends StatelessWidget {
                   'Statistiques',
                   Icons.bar_chart,
                   Colors.purple,
-                  () {}, // Placeholder
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const StatsScreen()),
+                    );
+                  },
                 ),
               ],
             ),
